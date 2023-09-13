@@ -40,3 +40,13 @@ const ApodDetails = () => {
 }
 
 export default ApodDetails
+
+export async function generateStaticParams(): Promise<Record<string, string>[]> {
+  console.log(process.cwd());
+
+  return [
+    {date: '2023-07-12'},
+    {date: '2023-07-13'},
+    {date: '2023-07-14'},
+  ]
+}
