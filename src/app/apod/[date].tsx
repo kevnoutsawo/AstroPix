@@ -18,7 +18,7 @@ const ApodDetails = () => {
   if (!apod) {
     return <ActivityIndicator />
   }
-
+ 
   return (
     <ScrollView>
       <ApodListItem apod={apod} />
