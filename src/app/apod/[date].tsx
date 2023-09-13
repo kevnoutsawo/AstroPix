@@ -1,6 +1,6 @@
 import { View, Text, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { useLocalSearchParams } from 'expo-router'
+import { useLocalSearchParams, Stack} from 'expo-router'
 import { Apod } from '@/types';
 import { fetchApod } from '@/api/apods';
 import ApodListItem from '@/components/ApodListItem';
@@ -21,6 +21,18 @@ const ApodDetails = () => {
  
   return (
     <ScrollView>
+      <Stack.Screen
+        options={{
+          // https://reactnavigation.org/docs/headers#setting-the-header-title
+          title: `Picture of the ${date}`,
+          // https://reactnavigation.org/docs/headers#adjusting-header-styles
+          headerStyle: { backgroundColor: '#f4511e' },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
       <ApodListItem apod={apod} />
       <Text
         style={{
